@@ -6,6 +6,7 @@ float4x4 _CameraInverseProjection;
 Texture2D<float4> _SkyboxTexture;
 SamplerState sampler_SkyboxTexture;
 static const float PI = 3.14159265f;
+float2 _PixelOffset;
 
 struct Ray
 {
@@ -41,7 +42,7 @@ Ray CreateCameraRay(float2 uv)
 {
     // Transform the camera origin to world space
     float3 origin = mul(_CameraToWorld, float4(0.0f, 0.0f, 0.0f, 1.0f)).xyz;
-    
+
     // Invert the perspective projection of the view-space position
     float3 direction = mul(_CameraInverseProjection, float4(uv, 0.0f, 1.0f)).xyz;
     // Transform the direction from camera to world space and normalize
@@ -111,14 +112,16 @@ float3 Shade(inout Ray ray, RayHit hit)
 
 
 
-[numthreads(8,8,1)]
-void CSMain (uint3 id : SV_DispatchThreadID)
+[numthreads(8, 8, 1)]
+void CSMain(uint3 id : SV_DispatchThreadID)
 {
     // Get the dimensions of the RenderTexture
     uint width, height;
     Result.GetDimensions(width, height);
-    // Transform pixel to [-1,1] range
-    float2 uv = float2((id.xy + float2(0.5f, 0.5f)) / float2(width, height) * 2.0f - 1.0f);
+    
+    // Transform pixel to [-1, 1] range
+    float2 uv = 2.0f * (float2(id.xy + _PixelOffset) / float2(width, height)) - 1.0f;
+    
     // Get a ray for the UVs
     Ray ray = CreateCameraRay(uv);
     // Write some colors
@@ -129,5 +132,5 @@ void CSMain (uint3 id : SV_DispatchThreadID)
     float3 result = Shade(ray, hit);
     Result[id.xy] = float4(result, 1);
 
-    
+
 }
