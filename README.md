@@ -10,4 +10,11 @@ Currently there is **RayTracingMaster.cs** and **RayTracingShader.compute**  + *
 
 # Progress:
 
+Ver0.0.1 - Spawning the spheres with perfect reflection
 ![alt text](https://raw.githubusercontent.com/romanokeser/RayTracing/main/Assets/Textures/example1.png)
+
+Ver0.0.2 - Shadows and diffuse reflection 
+![alt text](https://raw.githubusercontent.com/romanokeser/RayTracing/main/Assets/Textures/example2shadows.png)
+
+Ver0.0.3 - Spawning multiple spheres and controlling them via C# script in inspector
+![alt text](https://raw.githubusercontent.com/romanokeser/RayTracing/main/Assets/Textures/multipleSphereColors.png)
