@@ -17,4 +17,4 @@ Ver0.0.2 - Shadows and diffuse reflection
 ![alt text](https://raw.githubusercontent.com/romanokeser/RayTracing/main/Assets/Textures/example2shadows.png)
 
 Ver0.0.3 - Spawning multiple spheres and controlling them via C# script in inspector
-![alt text](https://raw.githubusercontent.com/romanokeser/RayTracing/main/Assets/Textures/multipleSphereColors.png)
+![alt text](https://github.com/romanokeser/RayTracing/blob/main/Assets/Textures/example3multipleSphereColors.png)
