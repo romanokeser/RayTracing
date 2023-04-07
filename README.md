@@ -9,3 +9,5 @@ More on [Ray tracing (graphics) - Wikipedia](https://en.wikipedia.org/wiki/Ray_t
 Currently there is **RayTracingMaster.cs** and **RayTracingShader.compute**  + **AddShader**
 
 # Progress:
+
+![alt text](https://raw.githubusercontent.com/romanokeser/RayTracing/main/Assets/Textures/example1.png)
