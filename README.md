@@ -6,7 +6,7 @@ More on [Ray tracing (graphics) - Wikipedia](https://en.wikipedia.org/wiki/Ray_t
 
 # Files
 
-Currently there is **RayTracingMaster.cs** and **RayTracingShader.compute**  + **AddShader**
+Currently there are **RayTracingMaster.cs** and **RayTracingShader.compute**  + **AddShader**
 
 # Progress:
 
